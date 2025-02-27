@@ -17,12 +17,10 @@ public class Triangulation {
         for (int i = 2; i < vertexNum - 1; i++) {
             Polygon currPoly = new Polygon();
 
-            // Триангулируем вершины
             currPoly.getVertexIndices().add(poly.getVertexIndices().get(0));
             currPoly.getVertexIndices().add(poly.getVertexIndices().get(i - 1));
             currPoly.getVertexIndices().add(poly.getVertexIndices().get(i));
 
-            // Триангулируем текстурные координаты
             if (!poly.getTextureVertexIndices().isEmpty()) {
                 currPoly.getTextureVertexIndices().add(poly.getTextureVertexIndices().get(0));
                 currPoly.getTextureVertexIndices().add(poly.getTextureVertexIndices().get(i - 1));
